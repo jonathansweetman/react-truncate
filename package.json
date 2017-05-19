@@ -1,7 +1,7 @@
 {
-  "name": "react-truncate",
+  "name": "jsweetman-react-truncate",
   "version": "2.1.4",
-  "description": "React component for truncating multi-line spans and adding an ellipsis",
+  "description": "React component for truncating multi-line spans and adding an ellipsis forked from https://github.com/One-com/react-truncate",
   "main": "lib/Truncate.CommonJS.js",
   "module": "lib/Truncate.js",
   "files": [
@@ -19,9 +19,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:One-com/react-truncate.git"
+    "url": "git@github.com:jonathansweetman/react-truncate.git"
   },
-  "homepage": "https://github.com/One-com/react-truncate",
+  "homepage": "https://github.com/jonathansweetman/react-truncate",
   "keywords": [
     "react",
     "truncate",

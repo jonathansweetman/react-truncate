@@ -9,7 +9,8 @@ export default class Truncate extends Component {
             PropTypes.oneOf([false]),
             PropTypes.number
         ]),
-        onTruncate: PropTypes.func
+        onTruncate: PropTypes.func,
+        alwaysTruncate: PropTypes.bool
     };
 
     static defaultProps = {
@@ -164,8 +165,9 @@ export default class Truncate extends Component {
         const {
             refs,
             props: {
-                lines: numLines,
-                ellipsis
+                ellipsis,
+                alwaysTruncate,
+                lines: numLines
             },
             state: {
                 targetWidth
@@ -181,7 +183,7 @@ export default class Truncate extends Component {
         let didTruncate = true;
         const ellipsisWidth = this.ellipsisWidth(this.refs.ellipsis);
 
-        for (let line = 1; line <= numLines; line++) {
+        for (let line = 1; (line <=  numLines || alwaysTruncate); line++) {
             const textWords = textLines[0];
 
             // Handle newline
@@ -253,6 +255,12 @@ export default class Truncate extends Component {
             }
 
             lines.push(resultLine);
+        }
+
+        if (alwaysTruncate) {
+            const l = lines.length - 1;
+            lines[l] = <span>{lines[l]}{ellipsis}</span>;
+            didTruncate = true;
         }
 
         onTruncate(didTruncate);
