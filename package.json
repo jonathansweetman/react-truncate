@@ -1,6 +1,6 @@
 {
   "name": "jsweetman-react-truncate",
-  "version": "2.1.4",
+  "version": "2.1.6",
   "description": "React component for truncating multi-line spans and adding an ellipsis forked from https://github.com/One-com/react-truncate",
   "main": "lib/Truncate.CommonJS.js",
   "module": "lib/Truncate.js",

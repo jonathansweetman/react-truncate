@@ -206,7 +206,7 @@ export default class Truncate extends Component {
                 }
             }
 
-            if (line === numLines) {
+            if (line === numLines && !alwaysTruncate) {
                 // Binary search determining the longest possible line inluding truncate string
                 const textRest = textWords.join(' ');
 
@@ -319,6 +319,7 @@ export default class Truncate extends Component {
         }
 
         delete spanProps.onTruncate;
+        delete spanProps.alwaysTruncate;
 
         return (
             <span {...spanProps} ref='target'>
